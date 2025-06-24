@@ -41,6 +41,7 @@ ln -sf "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$DOTFILES_DIR/.tmux" "$HOME/.tmux"
 ln -sf "$DOTFILES_DIR/.tmux-cht-command" "$HOME/.tmux-cht-command"
 ln -sf "$DOTFILES_DIR/.tmux-cht-languages" "$HOME/.tmux-cht-languages"
+ln -sf "$DOTFILES_DIR/.oh-my-zsh" "$HOME/.oh-my-zsh"
 
 # Neovim
 echo "🧠 Criando symlink do diretório Neovim inteiro..."
