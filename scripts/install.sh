@@ -97,3 +97,54 @@ if [ "$SHELL" != "$(which zsh)" ]; then
 fi
 
 echo "✅ Ambiente configurado com sucesso!"
+
+### ─────────────────────────────────────────────────────────────
+### 🐳 Instalação do Docker
+### ─────────────────────────────────────────────────────────────
+
+if ! command -v docker >/dev/null 2>&1; then
+	echo "🐳 Instalando Docker..."
+
+	sudo apt-get update
+	sudo apt-get install -y \
+		ca-certificates \
+		gnupg \
+		lsb-release
+
+	sudo install -m 0755 -d /etc/apt/keyrings
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+	echo \
+		"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+	  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
+
+	sudo apt-get update
+	sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+	sudo usermod -aG docker "$USER"
+	echo "✅ Docker instalado com sucesso! Reinicie a sessão para usar sem sudo."
+else
+	echo "🐳 Docker já está instalado"
+fi
+
+### ─────────────────────────────────────────────────────────────
+### 🔁 Instalação do Node via nvm
+### ─────────────────────────────────────────────────────────────
+
+if ! command -v node >/dev/null 2>&1; then
+	echo "🟢 Instalando Node.js via NVM..."
+
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+	# Carrega o nvm na sessão atual
+	export NVM_DIR="$HOME/.nvm"
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+	# Instala a versão LTS do Node
+	nvm install --lts
+	nvm use --lts
+	nvm alias default lts/*
+
+	echo "✅ Node.js instalado via NVM"
+else
+	echo "🟢 Node já está instalado"
+fi
