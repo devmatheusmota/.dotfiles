@@ -11,6 +11,7 @@ command -v zsh >/dev/null 2>&1 || sudo apt install -y zsh
 command -v tmux >/dev/null 2>&1 || sudo apt install -y tmux
 command -v nvim >/dev/null 2>&1 || sudo apt install -y neovim
 command -v curl >/dev/null 2>&1 || sudo apt install -y curl
+command -v build-essential >/dev/null 2>&1 || sudo apt install -y build-essential
 
 echo "🚀 Instalando Starship prompt..."
 
