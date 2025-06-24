@@ -66,22 +66,30 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 fi
 
 # Nerd Fonts
-echo "🔤 Instalando Nerd Fonts..."
+# Nerd Fonts
+echo "🔤 Verificando instalação das Nerd Fonts..."
 
-NERD_FONT_TMP="$HOME/.cache/nerd-fonts"
+# Verifica se uma das fontes já está instalada
+if ! fc-list | grep -qi "JetBrainsMono Nerd Font"; then
+	echo "🔤 Instalando Nerd Fonts..."
 
-# Clona só se ainda não tiver
-if [ ! -d "$NERD_FONT_TMP" ]; then
-	git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git "$NERD_FONT_TMP"
+	NERD_FONT_TMP="$HOME/.cache/nerd-fonts"
+
+	# Clona só se ainda não tiver
+	if [ ! -d "$NERD_FONT_TMP" ]; then
+		git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git "$NERD_FONT_TMP"
+	fi
+
+	# Instala as fontes desejadas
+	"$NERD_FONT_TMP/install.sh" JetBrainsMono FiraCode Hack
+
+	# Limpa o cache depois da instalação
+	rm -rf "$NERD_FONT_TMP"
+	echo "🧹 Repositório temporário das Nerd Fonts removido."
+	echo "✅ Fontes Nerd instaladas!"
+else
+	echo "✅ Nerd Fonts já instaladas. Pulando..."
 fi
-
-# Instala só uma fonte (JetBrainsMono por exemplo)
-"$NERD_FONT_TMP/install.sh" JetBrainsMono FiraCode Hack
-
-# (Opcional) Apaga o clone depois de instalar
-rm -rf "$NERD_FONT_TMP"
-
-echo "✅ Fonte JetBrainsMono Nerd Font instalada!"
 
 # Trocar shell padrão pra Zsh
 if [ "$SHELL" != "$(which zsh)" ]; then
