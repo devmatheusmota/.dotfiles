@@ -41,7 +41,6 @@ ln -sf "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$DOTFILES_DIR/.tmux" "$HOME/.tmux"
 ln -sf "$DOTFILES_DIR/.tmux-cht-command" "$HOME/.tmux-cht-command"
 ln -sf "$DOTFILES_DIR/.tmux-cht-languages" "$HOME/.tmux-cht-languages"
-ln -sf "$DOTFILES_DIR/.oh-my-zsh/custom" "$HOME/.oh-my-zsh/custom"
 
 # Neovim
 echo "🧠 Criando symlink do diretório Neovim inteiro..."
@@ -65,6 +64,7 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 	echo "💻 Instalando oh-my-zsh..."
 	cp -r "$DOTFILES_DIR/.oh-my-zsh" "$HOME/.oh-my-zsh"
 fi
+# ln -sf "$DOTFILES_DIR/.oh-my-zsh/custom" "$HOME/.oh-my-zsh/custom"
 
 # Nerd Fonts
 # Nerd Fonts
