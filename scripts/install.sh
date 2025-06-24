@@ -64,9 +64,7 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 	echo "💻 Instalando oh-my-zsh..."
 	cp -r "$DOTFILES_DIR/.oh-my-zsh" "$HOME/.oh-my-zsh"
 fi
-# ln -sf "$DOTFILES_DIR/.oh-my-zsh/custom" "$HOME/.oh-my-zsh/custom"
 
-# Nerd Fonts
 # Nerd Fonts
 echo "🔤 Verificando instalação das Nerd Fonts..."
 
