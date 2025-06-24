@@ -36,6 +36,7 @@ DOTFILES_DIR="$HOME/.dotfiles"
 ln -sf "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
 ln -sf "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
 ln -sf "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
+ln -sf "$DOTFILES_DIR/.tmux" "$HOME/.tmux"
 ln -sf "$DOTFILES_DIR/.tmux-cht-command" "$HOME/.tmux-cht-command"
 ln -sf "$DOTFILES_DIR/.tmux-cht-languages" "$HOME/.tmux-cht-languages"
 
