@@ -140,5 +140,5 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$(go env GOPATH)/bin
 
 PATH="$PATH":"$HOME/.dotfiles/scripts"
-bindkey -s '^f' "tmux-sessionizer^M"
+bindkey -s '^f' "tmux-sessionizer.sh^M"
 eval "$(starship init zsh)"
