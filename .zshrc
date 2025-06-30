@@ -142,3 +142,12 @@ export PATH=$PATH:$(go env GOPATH)/bin
 PATH="$PATH":"$HOME/.dotfiles/scripts"
 bindkey -s '^f' "tmux-sessionizer.sh^M"
 eval "$(starship init zsh)"
+
+# bun completions
+[ -s "/home/motinha/.bun/_bun" ] && source "/home/motinha/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
