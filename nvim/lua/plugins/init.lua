@@ -1,0 +1,19 @@
+return {
+  require 'plugins.harpoon',
+  require 'plugins.dap',
+  require 'plugins.trouble',
+  require 'plugins.copilot',
+  require 'plugins.treesitter',
+  'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
+  require 'plugins.gitsigns',
+  require 'plugins.which-key',
+  require 'plugins.telescope',
+  require 'plugins.lazydev',
+  require 'plugins.lsp',
+  require 'plugins.conform',
+  require 'plugins.blink',
+  require 'plugins.tokyonight',
+  require 'plugins.todo-comments',
+  require 'plugins.mini',
+  require 'plugins.autopairs',
+}

@@ -1,0 +1,42 @@
+return {
+  'nvim-treesitter/nvim-treesitter',
+  main = 'nvim-treesitter.configs',
+  build = ':TSUpdate',
+  dependencies = {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    'nvim-treesitter/playground',
+    'JoosepAlviste/nvim-ts-context-commentstring',
+  },
+  opts = {
+    ensure_installed = {
+      'bash',
+      'c',
+      'cpp',
+      'diff',
+      'go',
+      'html',
+      'css',
+      'json',
+      'yaml',
+      'lua',
+      'luadoc',
+      'markdown',
+      'markdown_inline',
+      'python',
+      'javascript',
+      'typescript',
+      'query',
+      'vim',
+      'vimdoc',
+    },
+    auto_install = true,
+    highlight = {
+      enable = true,
+      additional_vim_regex_highlighting = { 'ruby' },
+    },
+    indent = {
+      enable = true,
+      disable = { 'ruby' },
+    },
+  },
+}
