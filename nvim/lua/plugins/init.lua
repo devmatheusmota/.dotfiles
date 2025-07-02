@@ -18,4 +18,5 @@ return {
   require 'plugins.autopairs',
   require 'plugins.mason',
   require 'plugins.snacks',
+  require 'plugins.avante',
 }
