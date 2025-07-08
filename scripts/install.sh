@@ -14,6 +14,19 @@ command -v curl >/dev/null 2>&1 || sudo apt install -y curl
 command -v build-essential >/dev/null 2>&1 || sudo apt install -y build-essential
 command -v fzf >/dev/null 2>&1 || sudo apt install -y fzf
 
+echo "🔗 Criando symlinks..."
+
+DOTFILES_DIR="$HOME/.dotfiles"
+
+# Arquivos soltos na home
+ln -sf "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
+ln -sf "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
+ln -sf "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
+ln -sf "$DOTFILES_DIR/.tmux" "$HOME/.tmux"
+ln -sf "$DOTFILES_DIR/.tmux-cht-command" "$HOME/.tmux-cht-command"
+ln -sf "$DOTFILES_DIR/.tmux-cht-languages" "$HOME/.tmux-cht-languages"
+
+
 echo "🚀 Instalando Starship prompt..."
 
 if ! command -v starship >/dev/null 2>&1; then
@@ -30,17 +43,6 @@ else
 	echo "ℹ️  Starship já está configurado no .zshrc"
 fi
 
-echo "🔗 Criando symlinks..."
-
-DOTFILES_DIR="$HOME/.dotfiles"
-
-# Arquivos soltos na home
-ln -sf "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
-ln -sf "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
-ln -sf "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
-ln -sf "$DOTFILES_DIR/.tmux" "$HOME/.tmux"
-ln -sf "$DOTFILES_DIR/.tmux-cht-command" "$HOME/.tmux-cht-command"
-ln -sf "$DOTFILES_DIR/.tmux-cht-languages" "$HOME/.tmux-cht-languages"
 
 # Neovim
 echo "🧠 Criando symlink do diretório Neovim inteiro..."
