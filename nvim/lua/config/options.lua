@@ -24,6 +24,16 @@ vim.o.inccommand = 'split'
 vim.o.cursorline = true
 vim.o.scrolloff = 10
 vim.o.confirm = true
+vim.diagnostic.config {
+  virtual_text = {
+    prefix = '',
+    spacing = 2,
+  },
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
+}
 
 vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
